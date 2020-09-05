@@ -1,0 +1,32 @@
+<!-- <router-outlet></router-outlet> -->
+<!-- Without Bootstrap STarts -->
+<!-- <div class="container">
+  <div class="left-pannel">
+    <app-filter-pannel></app-filter-pannel>
+  </div>
+  <div class="right-pannel">
+    <app-landing-page></app-landing-page>
+  </div>
+</div> -->
+<!-- WIthout Bootstrap ends -->
+<div class="container-fluid box-style">
+  <!-- <div class="spinner-grow" style="width: 3rem; height: 3rem; position: absolute;
+      margin: 30% 50% 50% 40%;" role="status" *ngIf="dataService.dataLoading">
+    <span class="sr-only">Loading...</span>
+  </div> -->
+
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status" style="margin: 20%; position: absolute" *ngIf="dataService.dataLoading">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <app-filter-pannel></app-filter-pannel>
+    </div>
+    <div class="col-md-9">
+      <app-landing-page></app-landing-page>
+    </div>
+  </div>
+</div>

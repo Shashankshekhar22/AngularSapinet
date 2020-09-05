@@ -1,0 +1,60 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="card" style="border-radius: 25px">
+      <div class="card-body">
+        <h2 class="card-title font-lg mr-auto mt-2">
+          Filters
+          <button style="float: right; font-size: 10px; border: 0 0 0 0" (click)="filterData('Reset', 'reset')">
+            Reset
+          </button>
+        </h2>
+        <h6 class="mr-auto mt-2" style="text-align: center">Launch Year</h6>
+        <div class="display-button mt-2">
+          <div *ngFor="let year of launchYears" class="col-5  mb-2" style="text-align: center"
+            [ngClass]="{'isSelected':year==launchYear,'isUnSelected':year!=launchYear}">
+            <button (click)="filterData('launch_year', year)" class="filter-button">
+              {{ year }}
+            </button>
+          </div>
+        </div>
+
+        <h6 class="mr-auto mt-2" style="text-align: center">
+          Successfull Launch
+        </h6>
+        <div class="display-button mt-2">
+          <div class="col-5 col-md-5" style="text-align: center">
+            <button type="button" class="btn btn-default filter-button " (click)="filterData('launch_success', 'true')"
+              [ngClass]="{'isSelected':launchSuccess === 'true','isUnSelected':launchSuccess=== 'false'}">
+              <strong style="color: white">True</strong>
+            </button>
+          </div>
+          <div class="col-5 col-md-5">
+            <button type="button" class="btn btn-default filter-button " (click)="filterData('launch_success', 'false')"
+              [ngClass]="{'isSelected':launchSuccess === 'false','isUnSelected':launchSuccess==='true'}">
+              <strong>False</strong>
+            </button>
+          </div>
+        </div>
+
+        <h6 class="mr-auto mt-2" style="text-align: center">
+          Successfull Landing
+        </h6>
+        <div class="display-button mt-2">
+          <div class=" col-5 col-md-5 mb-2" style="text-align: center">
+            <button type="button" class="btn btn-default filter-button" (click)="filterData('land_success', 'true')"
+              [ngClass]="{'isSelected':landSucess === 'true','isUnSelected':launchSuccess==='false'}">
+              <strong style="color: white">True</strong>
+            </button>
+          </div>
+          <div class="col-5 col-md-5 mb-2">
+            <button type="button" class="btn btn-default filter-button " (click)="filterData('land_success', 'false')"
+              [ngClass]="{'isSelected':landSucess === 'false','isUnSelected':landSucess==='true'}">
+              <strong style="color: white">False</strong>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.filter-class {
+  background: blue;
+}
+button {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+button:active {
+  outline: none;
+  border: none;
+}
+
+.font-lg {
+  font-size: 1.12rem;
+}
+.display-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.filter-button {
+  color: white;
+  background: #90ee90;
+}
+
+.isSelected {
+  background: #43A143;
+  width: 100%
+}
+.isUnSelected{
+  background: #90ee90;
+}
+

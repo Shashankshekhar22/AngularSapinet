@@ -1,0 +1,103 @@
+<!-- <div class="main-content">
+  <div *ngFor="let spaceXdata of spaceXdataArray" class="cardList">
+    <mat-card class="cardListItem" card-data>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="{{ spaceXdata['links'].mission_patch }}"
+        alt="{{ spaceXdata.mission_name }}"
+      />
+      <mat-card-content>
+        <strong class="text-space text-blue">
+          {{ spaceXdata.mission_name }} # {{ spaceXdata.flight_number }}
+        </strong>
+        <div>
+          <strong>Mission Ids:</strong>
+          <div *ngIf="spaceXdata.mission_id.length">
+            <ul>
+              <li
+                *ngFor="let _missionId of spaceXdata?.mission_id; let i = index"
+              >
+                {{ _missionId }}
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="!spaceXdata.mission_id.length">
+            Mission Id Not Avaliable
+          </div>
+
+          <div>
+            <strong>Launch Year:</strong>
+            <strong class="text-blue">{{ spaceXdata.launch_year }}</strong>
+          </div>
+          <div>
+            <strong>Successful Launch:</strong>
+            <strong class="text-blue">{{ spaceXdata.launch_success }}</strong>
+          </div>
+          <div>
+            <strong>Success Landing:</strong>
+            <strong class="text-blue">{{ spaceXdata.launch_landing }}</strong>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div> -->
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="card-deck" *ngFor="let spaceXdata of spaceXdataArray">
+      <div class="col-auto mb-3">
+        <div class="card" style="width: 12rem; height: 25rem">
+          <img class="card-img-top" src="{{ spaceXdata['links'].mission_patch }}" alt="{{ spaceXdata.mission_name }}"
+            style="height: 8rem" />
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <strong class="card-title text-blue">
+              {{ spaceXdata.mission_name }} # {{ spaceXdata.flight_number }}
+            </strong>
+            <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.</p> -->
+            <div>
+              <strong>Mission Ids:</strong>
+              <div *ngIf="spaceXdata.mission_id.length">
+                <ul>
+                  <li *ngFor="
+                      let _missionId of spaceXdata?.mission_id;
+                      let i = index
+                    ">
+                    {{ _missionId }}
+                  </li>
+                </ul>
+              </div>
+              <div *ngIf="!spaceXdata.mission_id.length">
+                Mission Id Not Avaliable
+              </div>
+
+              <div>
+                <strong>Launch Year:</strong>
+                <strong class="text-blue">{{ spaceXdata.launch_year }}</strong>
+              </div>
+              <div>
+                <strong>Successful Launch:</strong>
+                <strong class="text-blue">{{
+                  spaceXdata.launch_success
+                }}</strong>
+              </div>
+              <div>
+                <strong>Success Landing:</strong>
+                <strong class="text-blue">{{
+                  spaceXdata.launch_landing
+                }}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!!spaceXdataArray && !spaceXdataArray.length" style="text-align: center; margin-top: 25%;">
+      No Data Available for the selected filter Data.
+    </div>
+  </div>
+</div>

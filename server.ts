@@ -13,7 +13,7 @@ enableProdMode();
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5200;
 const DIST_FOLDER = join(process.cwd(), "dist/browser");
 const enServer = require("./dist/server/en/main");
 const bnServer = require("./dist/server/bn/main");

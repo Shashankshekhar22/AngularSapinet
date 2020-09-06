@@ -2,6 +2,7 @@
   "name": "angular-ssr",
   "version": "0.0.0",
   "scripts": {
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -14,6 +15,10 @@
     "build:client-and-server-bundles": "ng run angular-ssr:build:production-bn && ng run angular-ssr:build:production-en && ng run angular-ssr:server-bn:production && ng run angular-ssr:server-en:production",
     "start:ssr": "npm run build:ssr && npm run serve:ssr",
     "build:ssr-server": "npm run compile:server && npm run serve:ssr"
+  },
+  "engine": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
   },
   "private": true,
   "dependencies": {
@@ -39,7 +44,8 @@
     "jquery": "^3.5.1",
     "rxjs": "~6.5.2",
     "tslib": "^1.9.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "typescript": "~3.2.2",
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",

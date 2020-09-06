@@ -16,10 +16,6 @@
     "start:ssr": "npm run build:ssr && npm run serve:ssr",
     "build:ssr-server": "npm run compile:server && npm run serve:ssr"
   },
-  "engine": {
-    "node": "12.4.0",
-    "npm": "6.9.0"
-  },
   "private": true,
   "dependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
